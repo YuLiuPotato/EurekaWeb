@@ -18,7 +18,6 @@ To use this project, follow these steps:
 ```bash
 python script.py
 ```
-
 ## Features
 - video on air
 - gallary of images
@@ -33,5 +32,5 @@ Contributions are welcome! Please follow these steps:
 
 See [CONTRIBUTING.md](link-to-contributing-guide) for more details.
 ## Contact
-For any inquiries, please email your.email@example.com.
+For any inquiries, please email yuliuy@ethz.ch.
 
