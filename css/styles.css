@@ -37,14 +37,17 @@
     z-index: 2;
     animation: fadeInUp 1.5s ease-in-out;
 }
-
+#hero h1, #hero p, #hero .btn {
+    position: relative; /* Ensure content is above the overlay */
+    z-index: 2; /* Set higher than the overlay */
+}
 #hero .btn {
     background-color: #ffffff;
     color: #000000;
     padding: 15px 40px;
     font-size: 1.3rem;
     border-radius: 50px;
-    z-index: 2;
+    z-index: 10;
     transition: all 0.3s ease;
 }
 
@@ -76,7 +79,19 @@
 }
 
 /*change of navigation bar*/
-
+.logo {
+    height: 40px; /* Adjust this height as needed */
+    width: auto;  /* Maintains aspect ratio */
+  }
+  
+  .navbar-brand {
+    padding: 0; /* Remove extra padding if necessary */
+  }
+  
+  .navbar-brand img {
+    display: inline-block;
+    vertical-align: middle;
+  }
 .navbar {
     background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent navbar */
     padding: 20px 0;
@@ -125,7 +140,7 @@
 
 
 body {
-    padding-top: 70px; /* Adjust based on navbar height */
+    padding-top: 80px; /* Adjust based on navbar height */
   }
 
   footer {
