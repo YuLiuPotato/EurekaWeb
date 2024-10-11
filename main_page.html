@@ -29,7 +29,7 @@
 
     <body>
         <!-- Navigation Bar -->
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <nav id="navbar" class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
             <div class="container">
             <a class="navbar-brand" href="#">
                 <img src="/figures/brand/White logo - no background.png" alt="Eureka Logo" class = "logo">
@@ -63,7 +63,33 @@
             </div>
         </nav>
   
+    <script>
+        const navbar = document.getElementById('navbar');
+        var flag = true;        // Show the navbar when the page loads
+        window.addEventListener('load', function() {
+            navbar.style.opacity = '1';
 
+            // After 3 seconds, hide the navbar automatically
+            setTimeout(function() {
+            navbar.style.opacity = '0';
+            flag = false;
+            }, 10000);  // 3 seconds
+        });
+        // Show the navbar when hovering over the top of the page
+        document.body.addEventListener('mousemove', function (e) {
+            if (e.clientY < 100) {  // When the mouse is near the top 100px of the page
+            navbar.style.opacity = '1';
+            } else {
+                if(flag = false){
+                    navbar.style.opacity = '0';
+                }
+            
+            }
+        });
+        
+        // Smooth transition effect
+        navbar.style.transition = 'opacity 0.5s ease-in-out';
+        </script>
 
 
 
