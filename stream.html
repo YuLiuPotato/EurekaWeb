@@ -12,6 +12,7 @@
             height: 100%;
             margin: 0;
             padding: 0;
+            background-color: #000; /* Set black background */
         }
         
         body {
@@ -20,96 +21,94 @@
             justify-content: space-between;
             min-height: 100vh;
         }
+        
         /* Custom styles */
         .navbar {
             background-color: #000;
+            height: 60px; /* Fixed height for navbar */
+            z-index: 20; /* Ensure navbar stays on top */
         }
+        
         .navbar-brand img {
-            width: 150px; /* Adjust the logo size */
+            width: 150px;
+            height: auto;
         }
+        
         .stream-section {
             position: relative;
-            text-align: center;
-            color: white;
-            flex-grow: 1; /* Grow to take available space */
+            flex-grow: 1;
             display: flex;
             align-items: center;
             justify-content: center;
+            background-color: #000;
+            overflow: hidden; /* Prevent image overflow */
+            height: calc(100vh - 110px); /* Subtract navbar and footer height */
         }
+        
         .stream-section img {
-            width: 100%;
-            height: calc(100vh - 120px); /* Adjust image to fit in between navbar and footer */
+            height: 100%;
+            width: auto;
+            max-width: 100%;
             object-fit: contain;
-            transform: rotate(90deg); /* Rotates image to fit in portrait mode */
+            transform: rotate(90deg);
         }
-        /* Rotate image for portrait orientation */
-        @media (orientation: portrait) {
-            .stream-section {
-                max-width: 100%;
-            }
-            .stream-section img {
-                width: 100vh;
-                height: 100vw;
-                max-width: none;
-                transform: rotate(90deg);
-                object-fit: contain;
-            }
-        }
+        
         .stream-section .overlay-text {
             position: absolute;
             top: 10px;
             left: 50%;
             transform: translateX(-50%);
             background-color: rgba(0,0,0,0.5);
-            padding: 5px 10px; /* Added horizontal padding */
+            padding: 0; /* Remove padding */
             border-radius: 5px;
             width: 60%;
             max-width: 200px;
             z-index: 10;
-            display: flex; /* Added for centering text */
+            height: 40px; /* Fixed height */
+            display: flex;
             align-items: center; /* Vertical center */
             justify-content: center; /* Horizontal center */
-            min-height: 40px; /* Ensures consistent height */
         }
+        
         .overlay-text h2 {
             font-size: 1rem;
-            margin: 0; /* Remove default margins */
-            padding: 0; /* Remove default padding */
-            width: 100%; /* Take full width */
-            text-align: center; /* Center text */
-            line-height: 1.2; /* Adjust line height */
+            color: white;
+            margin: 0;
+            line-height: 40px; /* Match container height */
+            width: 100%;
+            text-align: center;
         }
+        
         @media (max-width: 768px) {
             .stream-section .overlay-text {
                 width: 70%;
                 max-width: none;
-                min-height: 35px; /* Slightly smaller height for mobile */
             }
             .overlay-text h2 {
                 font-size: 1rem;
             }
         }
+        
         @media (max-width: 480px) {
             .stream-section .overlay-text {
                 width: 65%;
-                min-height: 30px; /* Even smaller height for very small screens */
             }
             .overlay-text h2 {
                 font-size: 0.7rem;
             }
         }
+        
         .footer {
             background-color: #000;
             color: white;
             text-align: center;
-            padding: 0.3rem 0;
-            font-family: Avenir, sans-serif;
+            height: 50px; /* Fixed height for footer */
             display: flex;
             align-items: center;
             justify-content: center;
-            height: 50px;
-            z-index: 10;
+            z-index: 20;
         }
+        
         .footer p {
             margin: 0;
         }
