@@ -36,25 +36,23 @@
             align-items: center;
             justify-content: center;
         }
-        .stream-section video {
-            width: 100vw;
-            height: 100vh;
-            max-height: calc(100vh - 120px); /* Adjust video to fit in between navbar and footer */
-            object-fit: cover;
-            transform: rotate(90deg); /* Rotates video to fit in portrait mode */
-
+        .stream-section img {
+            width: 100%;
+            height: calc(100vh - 120px); /* Adjust image to fit in between navbar and footer */
+            object-fit: contain;
+            transform: rotate(90deg); /* Rotates image to fit in portrait mode */
         }
-            /* Rotate video for portrait orientation */
+        /* Rotate image for portrait orientation */
         @media (orientation: portrait) {
             .stream-section {
-                max-width: 100%; /* Ensure the video takes the full width of the screen */
+                max-width: 100%;
             }
-            .stream-section video {
-                width: 100vh; /* Make the height fill the full width */
-                height: 100vw; /* Height based on the width of the viewport */
-                max-width: none; /* Remove max-width constraint */
-                transform: rotate(90deg); /* Rotate the video by 90 degrees */
-                object-fit: contain; /* Adjust fit for rotated view */
+            .stream-section img {
+                width: 100vh;
+                height: 100vw;
+                max-width: none;
+                transform: rotate(90deg);
+                object-fit: contain;
             }
         }
         .stream-section .overlay-text {
@@ -65,64 +63,61 @@
             background-color: rgba(0,0,0,0.5);
             padding: 5px;
             border-radius: 5px;
-            width: 60%; /* Set a default width */
-            max-width: 200px; /* Maximum width for larger screens */
+            width: 60%;
+            max-width: 200px;
+            z-index: 10;
         }
         .overlay-text h2 {
             font-size: 1rem;
             margin-bottom: 0;
         }
-        /* Media query for smaller screens */
         @media (max-width: 768px) {
             .stream-section .overlay-text {
-                width: 70%; /* Wider on smaller screens */
-                max-width: none; /* Remove max-width constraint */
+                width: 70%;
+                max-width: none;
             }
             .overlay-text h2 {
-                font-size: 1rem; /* Smaller font size on smaller screens */
+                font-size: 1rem;
             }
         }
-        /* Media query for very small screens */
         @media (max-width: 480px) {
             .stream-section .overlay-text {
-                width: 65%; /* Even wider on very small screens */
+                width: 65%;
             }
             .overlay-text h2 {
-                font-size: 0.7 rem; /* Even smaller font size on very small screens */
+                font-size: 0.7rem;
             }
         }
         .footer {
             background-color: #000;
             color: white;
             text-align: center;
-            padding: 0.3rem 0; /* Reduced padding for shorter height */
+            padding: 0.3rem 0;
             font-family: Avenir, sans-serif;
             display: flex;
-            align-items: center; /* Vertically centers the text */
-            justify-content: center; /* Horizontally centers the text */
-            height: 50px; /* Set a fixed height for better control */
+            align-items: center;
+            justify-content: center;
+            height: 50px;
+            z-index: 10;
         }
         .footer p {
-            margin: 0; /* Removes default margin to ensure perfect centering */
+            margin: 0;
         }
     </style>
 </head>
 <body>
-
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg">
         <div class="container">
             <a class="navbar-brand" href="#">
-                <img src="/figures/brand/White.png" alt="Eureka Logo"> <!-- Replace with your logo image path -->
+                <img src="/figures/brand/White.png" alt="Eureka Logo">
             </a>
         </div>
     </nav>
 
     <!-- Stream Section -->
     <div class="stream-section">
-        <video id="videoStream" autoplay playsinline>
-            Your browser does not support the video tag.
-        </video>
+        <img src="stream.mjpg" alt="Live Microscope Stream">
         <div class="overlay-text">
             <h2>Live Microscope Stream</h2>
         </div>
