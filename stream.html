@@ -61,20 +61,29 @@
             left: 50%;
             transform: translateX(-50%);
             background-color: rgba(0,0,0,0.5);
-            padding: 5px;
+            padding: 5px 10px; /* Added horizontal padding */
             border-radius: 5px;
             width: 60%;
             max-width: 200px;
             z-index: 10;
+            display: flex; /* Added for centering text */
+            align-items: center; /* Vertical center */
+            justify-content: center; /* Horizontal center */
+            min-height: 40px; /* Ensures consistent height */
         }
         .overlay-text h2 {
             font-size: 1rem;
-            margin-bottom: 0;
+            margin: 0; /* Remove default margins */
+            padding: 0; /* Remove default padding */
+            width: 100%; /* Take full width */
+            text-align: center; /* Center text */
+            line-height: 1.2; /* Adjust line height */
         }
         @media (max-width: 768px) {
             .stream-section .overlay-text {
                 width: 70%;
                 max-width: none;
+                min-height: 35px; /* Slightly smaller height for mobile */
             }
             .overlay-text h2 {
                 font-size: 1rem;
@@ -83,6 +92,7 @@
         @media (max-width: 480px) {
             .stream-section .overlay-text {
                 width: 65%;
+                min-height: 30px; /* Even smaller height for very small screens */
             }
             .overlay-text h2 {
                 font-size: 0.7rem;
