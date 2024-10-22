@@ -41,32 +41,35 @@
             align-items: center;
             justify-content: center;
             background-color: #000;
-            overflow: hidden;
-            height: calc(100vh - 110px); /* Subtract navbar and footer heights */
+            height: calc(100vh - 110px);
+            padding: 10px 0; /* Add some padding to prevent touching edges */
         }
         
         /* Default styling for phone portrait mode */
         .stream-section img {
-            height: 95%; /* Slightly smaller than 100% to avoid covering logo */
+            max-height: calc(100vh - 130px); /* Account for navbar, footer, and padding */
+            max-width: 98vw; /* Prevent touching screen edges */
             width: auto;
+            height: auto;
             object-fit: contain;
             transform: rotate(90deg);
+            transform-origin: center;
         }
 
         /* Landscape mode (phone landscape, tablet landscape, desktop) */
         @media (orientation: landscape) {
             .stream-section img {
-                height: auto;
-                width: 95%;
-                transform: none; /* No rotation needed in landscape */
+                max-height: calc(100vh - 130px);
+                max-width: 98vw;
+                transform: none;
             }
         }
 
-        /* Special case for tablets in portrait */
-        @media (min-width: 768px) and (orientation: portrait) {
+        /* Special case for tablets and larger devices */
+        @media (min-width: 768px) {
             .stream-section img {
-                height: auto;
-                width: 95%;
+                max-height: calc(100vh - 130px);
+                max-width: 98vw;
                 transform: none;
             }
         }
